@@ -166,7 +166,7 @@ V3 - 전시 API를 캐시, 쿼리 튜닝으로 응답 시간을 개선했으며,
 V3 - 랭킹 조회 API의 성능 향상을 위해 **커버링 인덱스를 적용해 응답 속도를 200%** 개선했습니다. [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
 
   </p>
-<p class="content">
+<p class = "full-half-content">
 
 ## GOGO V3 마이크로서비스 전환기
 
@@ -278,20 +278,15 @@ Prometheus와 Loki로 데이터를 수집하고, Grafana에서 통합 모니터�
 
 ### MSA, EDA 관련 대규모 시스템 학습, 연구 목적 프로젝트
 
-<p class = "content-box">
+<p class = "full-half-content">
 
 대규모 시스템에 관심이 있어 학습, 연구 목적으로 MSA를 적용해보며, 여러 패턴과 기술에 대해 학습한 프로젝트입니다.
 
 - 주문-결제 기능이 있는 이커머스 서비스 개발
-
 - 이벤트 큐를 활용하여(Kafka) 비동기 이벤트 통신으로 서비스 간의 결합을 낮춤
-
 - Choreography SAGA 패턴을 적용하여 여러 서비스 간의 트랜잭션의 결과적 일관성을 맞춤
-
 - 동시성 처리를 위해 Redis Single Node로 선언형 분산락을 구현하여 적용함
-
-- 명령모델과 조회모델을 분리하여 CQRS 패턴을 적용하였고,
-
+- 명령모델과 조회모델을 분리하여 CQRS 패턴을 적용하였고,  
   조회모델은 높은 조회 성능, 스키마 유연성을 고려하여 MongoDB에 저장함
 
 [프로젝트 깃허브 Repo](https://github.com/vumrra/order-payment-service)
