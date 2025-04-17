@@ -114,3 +114,8 @@ a {
 .edu-half-content p {
   margin: 0;
 }
+
+.full-half {
+  display: flex;
+  justify-content: space-between;
+}
