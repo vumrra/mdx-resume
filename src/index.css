@@ -39,6 +39,10 @@ a {
   text-decoration: inherit;
 }
 
+.medium-img {
+  width: 60%;
+}
+
 .small-img {
   width: 30%;
 }
