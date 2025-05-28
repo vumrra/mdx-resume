@@ -72,6 +72,33 @@ V3 - 랭킹 조회 API의 성능 향상을 위해 <span class="bold">커버링 �
 </p>
 
 <p class="content">
+
+## 처리량 개선과 고가용성 서비스를 위한 구조 설계
+
+특정 시간에 대량의 트래픽이 집중되는 베팅, 티켓 구매 API는 여러 서비스에 걸쳐 처리해야하는 작업이 포함되어 있습니다.  
+이를 동기 호출 방식 대신 비동기 이벤트 발행 구조로 전환하여, API 처리량을 효과적으로 개선했습니다.
+
+또한 조회 모델 생성을 위한 타 서비스 동기 호출로 인해 전체 서비스로 장애가 전파되는 문제가 발생했습니다.  
+호출 실패 시 기본 값을 반환하고, 장애 서비스로의 트래픽을 차단해 장애 전파를 줄이고 고가용성을 확보했습니다.
+
+<label class="modal-trigger img">
+  <input type="checkbox" class="modal-toggle" hidden />
+  <img src="/gogo-flow-chart.png" alt="gogo-flow-chart-img" class="thumbnail-img img" />
+
+  <div class="modal-backdrop">
+    <img
+      src="/gogo-flow-chart.png"
+      alt="gogo-flow-chart-img-large"
+      class="modal-img"
+    />
+  </div>
+</label>
+
+[베팅 API (PR)](https://github.com/team-gogo/gogo-betting/pull/2) | [Fallback, Circuit Breaker 패턴 도입 (PR)](https://github.com/team-gogo/gogo-stage/pull/171)
+
+</p>
+
+<p class="content">
 ## 매트릭, 로그 수집 및 모니터링
 
 서비스의 실시간 매트릭과 로그 수집, 시각화를 위해 PLG를 채택하여 구성했습니다.  
