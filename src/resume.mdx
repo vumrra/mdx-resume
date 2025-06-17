@@ -1,15 +1,17 @@
-# 신희성
+# 안녕하세요, 서버 개발자 신희성입니다.
 
-## 세상을 바꿀 수 있는 혁신적인 프로덕트를 만들며, <br /> 팀과 함께 성장하는 순간에 가장 큰 희열을 느낍니다. 🚀
+## 복잡한 도메인을 단순하게 풀기 위해 노력하며, <br /> 오너십을 가지고 끊임없이 문제를 정의하고 해결합니다.
 
 <div class="content">
-안정적인 서비스를 위해 운영이 중요하다고 느껴 많은 노력을 기울입니다.
 
-실제 사용자 +750명, DAU +350명의 서비스에서,  
-운영 중 발생한 문제들을 빠르게 파악하고 대응할 수 있는 시스템을 구축해본 경험이 있습니다.
+본교 입학 지원 시스템과 전국 서비스형 플랫폼 등 복잡한 비즈니스를 다뤄온 프로젝트 경험을 통해,  
+요구사항을 명확히 정의하고 단순한 구조로 구현해 내는 데 강점을 가지고 있습니다.
 
-지식을 나누고 토론하는 것을 즐기며, 교내 컨퍼런스에서 3회 발표하여 경험을 공유했습니다.  
-매일 아침 8시 데일리 스크럼으로 팀원들과 컨텍스트를 맞추며, 협업 속에서 함께 성장하고 있습니다.
+기술을 넘어 팀과 서비스의 방향을 고민하며, 목표를 명확히 이해하고 필요한 일을 스스로 찾아 실행합니다.  
+오너십을 바탕으로 문제를 정의하고 해결하며, 팀과 함께 지속적으로 성장하는 것을 추구합니다.
+
+솔루션 선택에 있어 문제를 다각도로 분석하며, 어떤 상황에 가장 효과를 낼 수 있을지 고민하고 판단합니다.  
+피드백은 성장의 중요한 발판이라 생각합니다. 부족한 점에 열린 자세로 피드백을 수용하며 스스로를 개선해 나갑니다.
 
 </div>
 
@@ -17,155 +19,22 @@
 
 ---
 
-<br />
-
-<div className="project-header">
- 
-  
-<div class="full-half">
-    ## GOGO | 전국 중·고등학교 스포츠 행사 플랫폼
-  [GOGO - 프로젝트 깃허브](https://github.com/team-gogo)
-
-</div>
-  <p className="position">백엔드 | 팀 리더</p>
-  <p className="period">2025. 01. ~ (현재)</p>
-</div>
-
-<p class="content">
-  ## 개요
-  <div class="sub-content">
-    GOGO는 전국 중·고등학교 대상 스포츠 행사 플랫폼입니다.         
-    본교 체육대회에서 서비스하여, +350명 DAU를 보유하고 있으며,      
-    전국 단위로 확장하는 것을 목표로 계속해서 발전해 나가고 있습니다.
-
-  </div>
-</p>
-
-<p class="content">
-
-V2 - 서버 개발과 PM을 맡아 Restful API 개발, 성능 개선, 프로젝트를 주도적으로 이끌었습니다.  
-V3 - 기존 서비스(V2)의 구조적 문제를 개선하며, 전국 서비스 확장을 위해 <span class = "bold">마이크로서비스 전환을 주도했습니다. </span>  
-V3 - 전시 API를 캐시, 쿼리 튜닝으로 응답 시간을 개선했으며, <span class="bold">비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.</span>  
-V3 - 랭킹 조회 API의 성능 향상을 위해 <span class="bold">커버링 인덱스를 적용해 응답 속도를 200%</span> 단축했습니다. [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
-
-  </p>
-<p class = "full-half-content">
-
-## GOGO V3 마이크로서비스 전환기
-
-단순한 기능 개선을 넘어, <span class="bold">OKR 기준 100+개 학교 서비스, MAU 30,000 달성, 전국단위 확장</span>이라는 목표를 세웠습니다.  
-이를 달성하기 위해 독립적인 배포 단위, 낮은 서비스 간 결합도, 폴리글랏한 구조로 마이크로서비스를 설계했습니다.
-
-- Fallback, Retry, Circuit Breaker 패턴을 도입하여 장애 전파를 방지 및 안정성을 높였습니다.
-- 분산 트랜잭션 처리 전략을 고민하였고, Choreography 기반 SAGA 패턴을 적용했습니다.
-- API Gateway에 JWT 인증 미들웨어를 개발해 인증·인가를 중앙에서 처리하였습니다.
-
-</p>
-
-<p class="content">
-## EDA, 분산 트랜잭션 관리
-
-도메인 간 강 결합을 줄이기 위해 비동기 이벤트 통신 기반 아키텍처를 구성했습니다.  
-서비스 간 트랜잭션은 이벤트를 통해 처리되며, 실패 시 보상 트랜잭션을 통해 결과적 일관성을 유지했습니다.  
-이벤트 유실에 대한 안정성과 높은 처리량을 위해 이벤트 큐는 Kafka를 채택했습니다.
-
-</p>
-
-<p class="content">
-
-## 처리량 개선과 고가용성 서비스를 위한 구조 설계
-
-특정 시간에 대량의 트래픽이 집중되는 베팅, 티켓 구매 API는 여러 서비스에 걸쳐 처리해야하는 작업이 포함되어 있습니다.  
-이를 동기 호출 방식 대신 비동기 이벤트 발행 구조로 전환하여, API 처리량을 효과적으로 개선했습니다.
-
-또한 조회 모델 생성을 위한 타 서비스 동기 호출로 인해 전체 서비스로 장애가 전파되는 문제가 발생했습니다.  
-호출 실패 시 기본 값을 반환하고, 장애 서비스로의 트래픽을 차단해 장애 전파를 줄이고 고가용성을 확보했습니다.
-
-<label class="modal-trigger img">
-  <input type="checkbox" class="modal-toggle" hidden />
-  <img src="/gogo-flow-chart.png" alt="gogo-flow-chart-img" class="thumbnail-img img" />
-
-  <div class="modal-backdrop">
-    <img
-      src="/gogo-flow-chart.png"
-      alt="gogo-flow-chart-img-large"
-      class="modal-img"
-    />
-  </div>
-</label>
-
-[베팅 API (PR)](https://github.com/team-gogo/gogo-betting/pull/2) | [Fallback, Circuit Breaker 패턴 도입 (PR)](https://github.com/team-gogo/gogo-stage/pull/171)
-
-</p>
-
-<p class="content">
-## 매트릭, 로그 수집 및 모니터링
-
-서비스의 실시간 매트릭과 로그 수집, 시각화를 위해 PLG를 채택하여 구성했습니다.  
-Prometheus와 Loki로 데이터를 수집하고, Grafana에서 통합 모니터링하며 장애 발생 시 알람 시스템을 구축했습니다.
-
-<label class="modal-trigger img">
-  <input type="checkbox" class="modal-toggle" hidden />
-  <img src="/gogo-grafana.png" alt="gogo-grafana-img" class="thumbnail-img img" />
-
-  <div class="modal-backdrop">
-    <img
-      src="/gogo-grafana.png"
-      alt="gogo-grafana-img-large"
-      class="modal-img"
-    />
-  </div>
-</label>
-
-</p>
-
-<p class="content">
-## DDD, 이벤트 스토밍 워크숍
-
-서비스 간 책임과 흐름이 불분명해지는 문제가 생기기 시작해 DDD를 도입해 보았습니다.  
-팀원 간 일관된 도메인 이해를 위해 이벤트 스토밍 워크숍을 주최했습니다.  
-이후 중요한 정책과 핫스팟에 대해 온라인 논의를 반복하여 설계를 다듬었고,  
-덕분에 서비스 간 책임과 흐름이 뚜렷한 MSA 기반 도메인 중심 설계에 도움이 되었습니다.
-
-<label class="modal-trigger img">
-  <input type="checkbox" class="modal-toggle" hidden />
-  <img src="/gogo-ddd.png" alt="gogo-ddd-img" class="thumbnail-img img" />
-
-  <div class="modal-backdrop">
-    <img
-      src="/gogo-ddd.png"
-      alt="gogo-ddd-img-large"
-      class="modal-img"
-    />
-  </div>
-</label>
-
-</p>
-
-<br />
-
----
-
-<br />
-
 <div className="project-header">
 <div class="full-half">
     ## Hello, GSM | 본교 신입생 입학지원시스템
 [Hello GSM - 프로젝트 깃허브](https://github.com/themoment-team/hellogsm-server-24)
 
 </div>
-    <p className="position">백엔드, 인프라 | 팀 리더</p>
-    <p className="period">2024. 04. ~ 2024. 11</p>
+    <p className="position">백엔드, 인프라 | 팀 리더 <span className="period">2024. 04. ~ 2024. 11</span></p>
 
 </div>
 
 <p class="content">
-## 개요
+  ## 개요
   <div class="sub-content">
-    광주소프트웨어마이스터고등학교 신입생 입학지원시스템 Hello, GSM 입니다.   
-    기존에 수기로 작성했던 원서 지원 시스템을 웹 사이트로 쉽고 간단하게 작성할 수 있게 돕는 서비스입니다.   
-    서버 개발을 맡아 기존 레거시 코드를 걷어내고,
-    서비스 개발과 운영에 전반적으로 기여했습니다.   
+    광주소프트웨어마이스터고등학교 신입생 입학지원시스템 Hello, GSM 입니다. <br />
+    기존에 수기로 작성했던 원서 지원 시스템을 웹 사이트로 쉽고 간단하게 작성할 수 있게 돕는 서비스입니다. <br />
+    서버 개발을 맡아 기존 레거시 코드를 걷어내고, 서비스 개발과 운영에 전반적으로 기여했습니다. <br />
     복잡한 입학 전형 도메인 요구사항 쉽게 풀어내기 위해 노력하였고, 코드로 옮겨 배치 애플리케이션을 개발했습니다.
 
   </div>
@@ -236,7 +105,7 @@ AWS 아키텍처 설계, Github Actions 기반 배포 자동화 구축 작업을
 
 <p>
   운영 중 필요한 정보를 팀 메신저로 알림을 보내기 위해, <br />
-  <span class="bold">Internal Relay API를 만들어 배포했습니다.</span>
+  Internal Relay API를 만들어 배포했습니다.
 </p>
 
 해당 API를 활용해 5XX 에러, 인스턴스 경보 상태,  
@@ -289,6 +158,163 @@ AWS 아키텍처 설계, Github Actions 기반 배포 자동화 구축 작업을
 
 <br />
 
+<div className="project-header">
+
+<div class="full-half">
+    ## GOGO | 전국 중·고등학교 스포츠 행사 플랫폼
+  [GOGO - 프로젝트 깃허브](https://github.com/team-gogo)
+
+</div>
+  <p className="position">백엔드 | 팀 리더 <span className="period">2025. 01. ~ (현재)</span></p>
+  
+</div>
+
+<p class="content">
+  ## 개요
+  <div class="sub-content">
+    GOGO는 전국 중·고등학교 대상 스포츠 행사 플랫폼입니다.         
+    본교 체육대회에서 서비스하여, +350명 DAU를 보유하고 있으며,      
+    전국 단위로 확장하는 것을 목표로 계속해서 발전해 나가고 있습니다.
+
+  </div>
+</p>
+
+<p class="content">
+
+V2 - 서버 개발과 PM을 맡아 Restful API 개발, 성능 개선, 프로젝트를 주도적으로 이끌었습니다.  
+V3 - 기존 서비스(V2)의 구조적 문제를 개선하며, 전국 서비스 확장을 위해 <span class = "bold">마이크로서비스 전환을 주도했습니다. </span>  
+V3 - 전시 API를 캐시, 쿼리 튜닝으로 응답 시간을 개선했으며, <span class="bold">비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.</span>  
+V3 - 랭킹 조회 API의 성능 향상을 위해 <span class="bold">커버링 인덱스를 적용해 응답 속도를 200%</span> 단축했습니다. [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
+
+  </p>
+<p class = "full-half-content">
+
+## GOGO V3 마이크로서비스 전환기
+
+단순한 기능 개선을 넘어, <span class="bold">OKR 기준 100+개 학교 서비스, MAU 30,000 달성, 전국단위 확장</span>이라는 목표를 세웠습니다.  
+이를 달성하기 위해 독립적인 배포 단위, 낮은 서비스 간 결합도, 폴리글랏한 구조로 마이크로서비스를 설계했습니다.
+
+- Fallback, Retry, Circuit Breaker 패턴을 도입하여 장애 전파를 방지 및 안정성을 높였습니다.
+- 분산 트랜잭션 처리 전략을 고민하였고, Choreography 기반 SAGA 패턴을 적용했습니다.
+- API Gateway에 JWT 인증 미들웨어를 개발해 인증·인가를 중앙에서 처리하였습니다.
+
+</p>
+
+<p class="content">
+## EDA, 분산 트랜잭션 관리
+
+도메인 간 강 결합을 줄이기 위해 비동기 이벤트 통신 기반 아키텍처를 구성했습니다.  
+서비스 간 트랜잭션은 이벤트를 통해 처리되며, 실패 시 보상 트랜잭션을 통해 결과적 일관성을 유지했습니다.  
+이벤트 유실에 대한 안정성과 높은 처리량을 위해 이벤트 큐는 Kafka를 채택했습니다.
+
+</p>
+
+<p class="content">
+
+## 처리량 개선과 고가용성 서비스를 위한 구조 설계
+
+특정 시간에 대량의 트래픽이 집중되는 베팅, 티켓 구매 API는 여러 서비스에 걸쳐 처리해야하는 작업이 포함되어 있습니다.  
+이를 동기 호출 방식 대신 비동기 이벤트 발행 구조로 전환하여, API 처리량을 효과적으로 개선했습니다.
+
+또한 조회 모델 생성을 위한 타 서비스 동기 호출로 인해 전체 서비스로 장애가 전파되는 문제가 발생했습니다.  
+호출 실패 시 기본 값을 반환하고, 장애 서비스로의 트래픽을 차단해 장애 전파를 줄이고 고가용성을 확보했습니다.
+
+<label class="modal-trigger img">
+  <input type="checkbox" class="modal-toggle" hidden />
+  <img src="/gogo-flow-chart.png" alt="gogo-flow-chart-img" class="thumbnail-img img" />
+
+  <div class="modal-backdrop">
+    <img
+      src="/gogo-flow-chart.png"
+      alt="gogo-flow-chart-img-large"
+      class="modal-img"
+    />
+  </div>
+</label>
+
+[베팅 API (PR)](https://github.com/team-gogo/gogo-betting/pull/2) | [Fallback, Circuit Breaker 패턴 도입 (PR)](https://github.com/team-gogo/gogo-stage/pull/171)
+
+</p>
+
+<p class="content">
+
+## Spring Batch 퍼모먼트 향상
+
+배팅 정산 처리 로직은 Spring Batch를 사용해 개발되었습니다.  
+하지만 기존 구조에서 대량의 데이터를 처리하는 상황에 큰 성능 저하가 있는 것을 확인했습니다.  
+다양한 테스트 시나리오를 통해 병목 지점을 확인하였고, 이를 기반으로 다음과 같은 성능 개선 작업을 하였습니다.
+
+- ItemProcessor를 제거하여, 청크 단위 일괄 처리 구조로 개선
+- Paging 처리의 성능 저하 문제를 해결하기 위해, Cursor 기반 Reader 적용
+- 배치 로직에서 JPA를 걷어내고, Exposed DSL을 활용해 Batch Insert 적용
+
+그 결과, 100만 건 처리 기준으로 <span class = "bold">30분 -> 1분 내외로 단축</span>, <span class = "bold">약 30배 성능을 향상</span>시켰습니다.
+
+<label class="modal-trigger img">
+  <input type="checkbox" class="modal-toggle" hidden />
+  <img src="/gogo-spring-batch-arc.png" alt="gogo-spring-batch-arc-img" class="thumbnail-img medium-img border-frame"  />
+
+  <div class="modal-backdrop">
+    <img
+      src="/gogo-spring-batch-arc.png"
+      alt="gogo-spring-batch-arc-img-large"
+      class="modal-img"
+    />
+  </div>
+</label>
+
+[Spring Batch 성능 개선 (PR)](https://github.com/team-gogo/gogo-betting/pull/28) | [성능 개선 내용을 담은 블로그 (Tistory)](https://tlsgmltjd.tistory.com/29)
+
+</p>
+
+<p class="content">
+## 매트릭, 로그 수집 및 모니터링
+
+서비스의 실시간 매트릭과 로그 수집, 시각화를 위해 PLG를 채택하여 구성했습니다.  
+Prometheus와 Loki로 데이터를 수집하고, Grafana에서 통합 모니터링하며 장애 발생 시 알람 시스템을 구축했습니다.
+
+<label class="modal-trigger img">
+  <input type="checkbox" class="modal-toggle" hidden />
+  <img src="/gogo-grafana.png" alt="gogo-grafana-img" class="thumbnail-img img" />
+
+  <div class="modal-backdrop">
+    <img
+      src="/gogo-grafana.png"
+      alt="gogo-grafana-img-large"
+      class="modal-img"
+    />
+  </div>
+</label>
+
+</p>
+
+<p class="content">
+## DDD, 이벤트 스토밍 워크숍
+
+서비스 간 책임과 흐름이 불분명해지는 문제가 생기기 시작해 DDD를 도입해 보았습니다.  
+팀원 간 일관된 도메인 이해를 위해 이벤트 스토밍 워크숍을 주최했습니다.  
+이후 중요한 정책과 핫스팟에 대해 온라인 논의를 반복하여 설계를 다듬었고,  
+덕분에 서비스 간 책임과 흐름이 뚜렷한 MSA 기반 도메인 중심 설계에 도움이 되었습니다.
+
+<label class="modal-trigger img">
+  <input type="checkbox" class="modal-toggle" hidden />
+  <img src="/gogo-ddd.png" alt="gogo-ddd-img" class="thumbnail-img img" />
+
+  <div class="modal-backdrop">
+    <img
+      src="/gogo-ddd.png"
+      alt="gogo-ddd-img-large"
+      class="modal-img"
+    />
+  </div>
+</label>
+
+</p>
+
+---
+
+<br />
+
 # Experience
 
 <p class="box">
@@ -297,7 +323,7 @@ AWS 아키텍처 설계, Github Actions 기반 배포 자동화 구축 작업을
 
 <p class = "content-box">
 
-교내 전공 동아리를 대상으로 SpringBoot 초기세팅을 돕는 Template 오픈소스를 개발 (ver. Java, Kotlin)
+교내 전공 동아리를 대상으로 SpringBoot 초기세팅을 돕는 Template 오픈소스를 개발했습니다. (ver. Java, Kotlin)
 
 [GSM Template 깃허브 (Repo)](https://github.com/orgs/GSM-Template/repositories)
 
@@ -337,7 +363,7 @@ Golang으로 매일 아침 8시에 알림을 보내는 리마인드 봇을 개�
 
 그 결과, 스터디 인원들의 Daily 참여율 100%를 달성했습니다.
 
-[라마인드 봇 (Repo)](https://github.com/tlsgmltjd/chong2)
+[라마인드 봇 깃허브 (Repo)](https://github.com/tlsgmltjd/chong2)
 
 </p>
 
@@ -347,19 +373,17 @@ Golang으로 매일 아침 8시에 알림을 보내는 리마인드 봇을 개�
 
 <p class="box">
 
-### MSA, EDA 관련 대규모 시스템 학습, 연구 목적 프로젝트
+### 본교 취업 공고 통합 관리 서비스 개발
 
 <p class = "full-half-content">
 
-대규모 시스템에 관심이 있어 학습, 연구 목적으로 MSA를 적용해보며, 여러 패턴과 기술에 대해 학습한 프로젝트입니다.
+교내 채용 공고 안내는 기업의 채용 의뢰 이메일을 받아 교내 디스코드 서버에 안내되는 방식으로,  
+힉생들은 공고를 놓치기 쉽고, 선생님들은 이력서 수합과 지원자 관리에 어려움을 겪고 있었습니다.  
+이러한 문제를 해결하기 위해, 채용 공고 및 지원자 관리 웹 서비스를 기획하고,  
+7일 만에 MVP를 개발해 교내에 즉시 상용화했습니다.  
+그 결과 학생들은 쉽게 공고 확인, 지원할 수 있고, 선생님들도 지원자 관리가 편리해졌다는 긍정적인 피드백을 받았습니다.
 
-- 주문-결제 기능이 있는 이커머스 서비스 개발
-- 이벤트 큐를 활용하여(Kafka) 비동기 이벤트 통신으로 서비스 간의 결합을 낮춤
-- Choreography SAGA 패턴을 적용하여 여러 서비스 간의 트랜잭션의 결과적 일관성을 맞춤
-- 동시성 처리를 위해 Redis Single Node로 선언형 분산락을 구현하여 적용함
-- 명령모델과 조회모델을 분리하였고(CQRS), 조회모델은 높은 조회 성능, 스키마 유연성을 고려하여 MongoDB에 저장함
-
-[프로젝트 깃허브 Repo](https://github.com/vumrra/order-payment-service)
+[CHUP 서비스 깃허브 (Repo)](https://github.com/team-chup/chup-server)
 
 </p>
 
@@ -376,13 +400,13 @@ Golang으로 매일 아침 8시에 알림을 보내는 리마인드 봇을 개�
 ### GSM Devfest conf 1th - PM이 되어 기획부터 운영까지 (교내)
 
 GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,  
-교내 컨퍼런스에서 약 100명의 리스너 앞에서 20분간 발표를 진행함.  
+교내 컨퍼런스에서 약 100명의 리스너 앞에서 20분간 발표를 진행했습니다.  
 [발표 영상 링크](https://www.youtube.com/watch?v=Xv93fI9WE_Q)
 
 ### 2025 9기 신입생 멘토링 발표 (교내)
 
 신입생들에게 본교에서 1학년 시기에 대한 조언과 개발자로서 성장할 수 있는 방법을,  
-약 80명의 리스너 앞에서 15분간 발표를 진행함.  
+약 80명의 리스너 앞에서 15분간 발표를 진행했습니다.  
 [발표 자료 링크](https://drive.google.com/file/d/1KDANsr3mcEMWYua7V5GiylQ_iQP9Uf6t/view?usp=sharing)
 
 <br />
@@ -396,7 +420,7 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 <p class="cer-box">
 ### 제 21회, 22회 TOPCIT 성적 우수자 선정 - 금상
 
-<p className="period">
+<p className="sub-text">
   제 21회, 22회 TOCIT 고등학생 부문에서 금상(2위)을 수상받아 시상식에 초청 (2회
   수상)
 </p>
@@ -406,7 +430,7 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 <p class="cer-box">
 ### 제 24회 앱잼 해커톤 - 최우수상
 
-<p className="period">
+<p className="sub-text">
   알파코 디지털새싹 캠프, SK플래닛 주관 해커톤 미래산업 분야 최우수상
 </p>
 
@@ -415,7 +439,7 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 <p class="cer-box">
 ### 제 7회, 8회 교내 아이디어 페스티벌 - 우수상
 
-<p className="period">
+<p className="sub-text">
   광주소프트웨어마이스터고등학교 프로젝트 페스티벌 우수상 (2회 수상)
 </p>
 
@@ -424,7 +448,7 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 <p class="cer-box">
 ### 2023, 2024 GSM 역량성취대회 - 우수상
 
-<p className="period">
+<p className="sub-text">
   광주소프트웨어마이스터고등학교 전공능력 역량성취 부문 2위 (2회 수상)
 </p>
 
@@ -440,27 +464,27 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 
 <div class="cer-box">
   <h3> 정보처리기능사 </h3>
-  <p className="period">2023 정기 기능사 4회</p>
+  <p className="sub-text">2023 정기 기능사 4회</p>
 </div>
 
 <div class="cer-box">
   <h3> 정보처리산업기사 </h3>
-  <p className="period">2024 정기 과정평가형자격 3회</p>
+  <p className="sub-text">2024 정기 과정평가형자격 3회</p>
 </div>
 
 <div class="cer-box">
   <h3> SQL 개발자 </h3>
-  <p className="period">2024 제 52회 SQL 개발자</p>
+  <p className="sub-text">2024 제 52회 SQL 개발자</p>
 </div>
 
 <div class="cer-box">
   <h3> TOPCIT 21회 정기평가 </h3>
-  <p className="period">599점 (고등학생 부문 2위)</p>
+  <p className="sub-text">599점 (고등학생 부문 2위)</p>
 </div>
 
 <div class="cer-box">
   <h3> TOPCIT 22회 정기평가 </h3>
-  <p className="period">730점 (고등학생 부문 2위)</p>
+  <p className="sub-text">730점 (고등학생 부문 2위)</p>
 </div>
 
 <br />
@@ -499,15 +523,17 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 <div class="edu-half-content">
 ### 광주소프트웨어마이스터고등학교 7기
 
-<p className="period">2023. 3 ~ 2026. 1</p>
+<p className="sub-text">2023. 3 ~ 2026. 1</p>
 </div>
 
 <div class="edu-half-content">
 ### 제 7대 학생자치회 - 전공부 부장
 
-<p className="period">2024. 9 ~ 2025. 6</p>
+<p className="sub-text">2024. 9 ~ 2025. 6</p>
 </div>
 </div>
 
-마이스터고 취업자 군복무 병역혜택으로 산업기능요원으로 대체 복무가 가능하며,  
-만 24세까지 병역 연기가 가능하여 2030년까지 근무가 가능합니다.
+<p className="sub-text">
+  마이스터고 취업자 군복무 병역혜택으로 산업기능요원으로 대체 복무가 가능합니다.{" "}
+  <br />만 24세까지 병역 연기가 가능하여 2030년까지 근무가 가능합니다.
+</p>
