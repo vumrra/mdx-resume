@@ -20,8 +20,8 @@
 실제 불편함에서 출발한 채용 공고 관리 서비스를 7일 만에 MVP로 개발해 상용화한 경험이 있고,  
  30명 규모의 교내 개발 조직에서, 다양한 경험과 시각을 가진 팀원들과 함께 협업하며 팀의 의사 결정에 기여했습니다.
 
-어려운 문제에 부딪혔을 때 안되는 이유를 먼저 떠올리기보다, <span class="highlight">큰 틀에서 바라보고 근본적인 해결 방법을 고민</span> 합니다.  
- 제품의 기획부터 개발, 운영까지 전 과정에 <span class="highlight">높은 책임감을 가지고 임하며, 서비스의 완성도와 디테일에 집중</span> 합니다.
+어려운 문제에 부딪혔을 때 안되는 이유를 먼저 떠올리기보다, <span class="highlight">큰 틀에서 바라보고 근본적인 해결 방법을 고민</span>합니다.  
+ 제품의 기획부터 개발, 운영까지 전 과정에 <span class="highlight">높은 책임감을 가지고 임하며, 서비스의 완성도와 디테일에 집중</span>합니다.
 
 솔루션 선택에 있어 <span class="highlight">문제를 다각도로 분석하며, 어떤 상황에 가장 최고의 효과를 낼 수 있을지</span> 고민하고 판단합니다.  
  피드백은 성장의 중요한 발판이라 생각합니다. <span class="highlight">부족한 점에 열린 자세로 피드백을 수용하며 개선</span>해 나갑니다.
@@ -58,17 +58,73 @@
 <br />
 
 <div className="project-header">
-<div class="full-half">
-    ## Hello, GSM<span className="period">2024. 04. ~ 2024. 11</span>
-[Hello GSM - 프로젝트 깃허브](https://github.com/themoment-team/hellogsm-server-24)
 
+<div
+  class="full-half"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+    <img
+      src="/hg-logo.png"
+      style={{
+        width: "50px",
+        height: "50px",
+        borderRadius: "50%",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      }}
+      alt="Hello GSM Logo"
+    />
+    <span style={{ fontSize: "1.4em", fontWeight: "bold" }}>Hello, GSM</span>
+    <span className="period">2024. 04. ~ 2024. 11</span>
+  </div>
+  <div
+    style={{
+      textAlign: "right",
+      fontSize: "0.95em",
+      display: "flex",
+      gap: "15px",
+    }}
+  >
+    <a
+      href="https://www.hellogsm.kr/"
+      target="_blank"
+      style={{
+        display: "block",
+        fontWeight: "bold",
+        color: "#007acc",
+        textDecoration: "none",
+        marginBottom: "4px",
+      }}
+    >
+      서비스 링크
+    </a>
+    
+    /
+
+    <a
+      href="https://github.com/themoment-team/hellogsm-server-24"
+      target="_blank"
+      style={{
+        display: "block",
+        fontWeight: "bold",
+        color: "#007acc",
+        textDecoration: "none",
+        marginBottom: "4px",
+      }}
+    >
+      Hello GSM - 프로젝트 깃허브
+    </a>
+
+  </div>
 </div>
 
 </div>
 
 <img src="/hg.png" style={{ width: "100%" }} />
-
-<p class="content">
 
 ## 개요 및 역할
 
@@ -79,10 +135,10 @@
     복잡한 입학 전형 도메인 요구사항 단순하게 풀어내기 위해 노력하였고, 코드로 옮겨 배치 애플리케이션을 개발했습니다.
 
   </div>
-</p>
 
 <p class="content">
-## Skills 
+## Skills
+
 - Java, Spring Boot, JPA, QueryDSL, Go, Gorm
 - AWS, Prometheus, Grafana, Docker, Github Actions, MySQL, Redis
 
@@ -158,57 +214,116 @@ AWS 아키텍처 설계, 모니터링 시스템, Github Actions 기반 배포 �
 
 </div>
 
-<p class="content">
-## 데이터 모델링 개선
+<p class = "full-half-content">
+<div
+  class="full-half"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+## 원서 수정 기능 트러블 슈팅 및 데이터 모델링 개선 
+[ERD 링크](https://www.erdcloud.com/d/4sGCFPCyWp9uaRP9b) / [원서 수정 기능 (PR)](https://github.com/themoment-team/hellogsm-server-24/pull/26)
+</div>
 
-기존 시스템에서는 입학 지원 비즈니스를 풀어내기 위해 슈퍼-서브 타입 관계 기법으로 테이블이 구성되어 있었고,  
-JPA에서는 싱글 테이블 전략으로 매핑하고 있었습니다.
-
-하지만 서비스의 비즈니스에서는 필요하지 않은 기법이 사용되었다고 판단했고, 데이터 모델링을 새로 진행했습니다.  
-그 결과 책임에 따라 잘 분리 되어있는 구조가 되었고, 더 이해하기 쉬운 코드를 작성할 수 있게 되었습니다.
+기존 입학 원서 도메인은 졸업 상태별를 Dtype으로 두어 구분하는 싱글 테이블 상속 구조였습니다.  
+하지만 원서 수정 시 Dtype 변경이 필요해, 일관된 수정 로직 작성이 어려웠습니다.  
+이를 해결하기 위해 기존 원서를 JPQL로 삭제 후 수정된 원서를 저장하는 방식으로 일관성을 유지했습니다.  
+근본적으로는 도메인에 비해 과도한 상속 모델이 문제라 판단해 래거시 모델을 제거하고 단순한 구조로 재설계했습니다.  
+그 결과 원서 수정 작업이 깔끔하게 처리되었고, 도메인이 단순해져 유지보수성, 가독성이 향상되었습니다.  
+이 경험을 통해 기술적 해결 뿐 아니라, 큰 틀에서 문제의 본질을 파악하고 고민해야 한다는 점을 배웠습니다.
 
 <img src="/hg-erd.png" style={{ width: "100%" }} />
 
-[ERD 링크](https://www.erdcloud.com/d/4sGCFPCyWp9uaRP9b)
+</p>
+
+<p class = "full-half-content">
+
+<div
+  class="full-half"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  ## API Response 공통화
+  <br />
+  [Response 공통화 작업
+  (PR)](https://github.com/themoment-team/hellogsm-server-24/pull/37)
+</div>
+
+많은 API의 Response 스펙이 달라, FE에서 파싱하는 방식이 일관되지 않았습니다.  
+모든 컨트롤러의 반환 타입은 `ResponseEntity<>`였고, 단순 메시지는 Map으로 처리해 중복 코드가 많았습니다.  
+이를 해결하기 위해 `ControllerAdvice`를 구현해 모든 API 응답을 공통화 처리하도록 개선했습니다.  
+DTO 반환 시에는 컨트롤러가 객체를 그대로 반환하고, 단순 메시지는 공통 응답 객체를 사용해 bypass 처리했습니다.  
+그 결과 FE 파싱 로직이 일관되었고, API Response 스펙을 통일해 유지보수성이 향상되었습니다.
 
 </p>
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
 <div className="project-header">
-
-<div class="full-half">
-    ## GOGO <span className="period">2025. 01. ~ present</span>
-  [GOGO - 프로젝트 깃허브](https://github.com/team-gogo)
-
+<div
+  class="full-half"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }}
+>
+  <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+    <img
+      src="/gogo-logo.png"
+      style={{
+        width: "50px",
+        height: "50px",
+        borderRadius: "50%",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      }}
+      alt="GOGO Logo"
+    />
+    <span style={{ fontSize: "1.4em", fontWeight: "bold" }}>GOGO</span>
+    <span className="period">2025. 01. ~ present</span>
+  </div>
+  <div style={{ textAlign: "right", fontSize: "0.95em" }}>
+    <a
+      href="https://github.com/team-gogo"
+      target="_blank"
+      style={{
+        display: "block",
+        fontWeight: "bold",
+        color: "#007acc",
+        textDecoration: "none",
+        marginBottom: "4px",
+      }}
+    >
+      GOGO - 프로젝트 깃허브
+    </a>
+  </div>
 </div>
 
 </div>
 
 <img src="/gogo.png" style={{ width: "100%" }} />
 
-## 개요 및 역할
+<h2 style={{ marginTop: 0 }}> 개요 및 역할 </h2>
 
   <div class="sub-content">
     GOGO는 전국 중·고등학교 대상 스포츠 행사 플랫폼으로, 쉽고 즐겁게 경기 운영을 돕는 서비스입니다.   
-    본교 체육대회에서 +350명 DAU를 기록하며 서비스 중이며, 전국 단위 확장을 목표로 발전하고 있습니다.   
+    본교 체육대회에서 +350명 DAU를 기록하며 서비스 중이고, 전국 단위 확장을 목표로 발전하고 있습니다.   
     서버 개발과 팀 리더를 맡아 Restful API 개발, 성능 개선, 마이크로서비스 전환을 주도했습니다.   
-    전시 API의 응답 시간을 개선했으며,비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.   
+    전시 API의 응답 시간을 개선했으며, 비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.   
     -> 커버링 인덱스를 적용해 랭킹 조회 API의 <span class="bold">응답 속도를 200% 단축</span> [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
 
   </div>
 
+<p class = "full-half-content">
 ## Skills
 
-- Java, Kotlin, Spring Boot, Spring Batch, Spring Cloud, Python, FastAPI
-- AWS, Kafka, Prometheus, Loki, Grafana
-- MySQL, Redis
+- Java, Kotlin, Spring Boot, JPA, QueryDSL, Exposed, Spring Batch, Spring Cloud, Python, FastAPI
+- AWS, Kafka, Prometheus, Loki, Grafana,MySQL, Redis
+
+</p>
 
 <p class = "full-half-content">
 
@@ -217,18 +332,12 @@ JPA에서는 싱글 테이블 전략으로 매핑하고 있었습니다.
 단순한 기능 개선을 넘어, <span class="bold">OKR 기준 100+개 학교 서비스, MAU 30,000 달성, 전국단위 확장</span> 목표를 세웠습니다.  
 이를 달성하기 위해 독립적인 배포 단위, 낮은 서비스 간 결합도, 폴리글랏한 구조로 마이크로서비스를 설계했습니다.
 
+- 이벤트 스토밍을 통해 비즈니스 도메인을 분석하고, 총 7개의 마이크로서비스를 도출했습니다.
 - Fallback, Retry, Circuit Breaker 패턴을 도입하여 장애 전파를 방지 및 안정성을 높였습니다.
 - 분산 트랜잭션 처리 전략을 고민하였고, Choreography 기반 SAGA 패턴을 적용했습니다.
 - API Gateway에 JWT 인증 미들웨어를 개발해 인증·인가를 중앙에서 처리하였습니다.
-
-</p>
-
-<p class="content">
-## EDA, 분산 트랜잭션 관리
-
-도메인 간 강 결합을 줄이기 위해 비동기 이벤트 통신 기반 아키텍처를 구성했습니다.  
-서비스 간 트랜잭션은 이벤트를 통해 처리되며, 실패 시 보상 트랜잭션을 통해 결과적 일관성을 유지했습니다.  
-이벤트 유실에 대한 안정성과 높은 처리량을 위해 이벤트 큐는 Kafka를 채택했습니다.
+- EDA 아키텍처로 도메인 간 결합도를 낮추고, 이벤트 기반 트랜잭션과 보상 로직으로 결과적 일관성을 유지했습니다.
+- 이벤트 유실에 대한 안정성과 높은 처리량을 위해 이벤트 큐는 Kafka를 채택했습니다.
 
 </p>
 
@@ -241,7 +350,7 @@ JPA에서는 싱글 테이블 전략으로 매핑하고 있었습니다.
 또한 조회 모델 생성을 위한 타 서비스 동기 호출로 인해 전체 서비스로 장애가 전파되는 문제가 발생했습니다.  
 호출 실패 시 기본 값을 반환하고, 장애 서비스로의 트래픽을 차단해 장애 전파를 줄이고 고가용성을 확보했습니다.
 
-<img src="/gogo-flow-chart.png" style={{ width: "65%" }} />
+<img src="/gogo-flow-chart.png" style={{ width: "100%" }} />
 
 [베팅 API (PR)](https://github.com/team-gogo/gogo-betting/pull/2) | [Fallback, Circuit Breaker 패턴 도입 (PR)](https://github.com/team-gogo/gogo-stage/pull/171)
 
@@ -367,28 +476,31 @@ Golang으로 매일 아침 8시에 알림을 보내는 리마인드 봇을 개�
 
 # Presentation
 
+<p className="content">
 ### GSM Devfest conf 1th - PM이 되어 기획부터 운영까지 (교내)
 
 GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,  
 교내 컨퍼런스에서 약 100명의 리스너 앞에서 20분간 발표를 진행했습니다.  
-[발표 영상 링크](https://www.youtube.com/watch?v=Xv93fI9WE_Q)
+[발표 영상 링크 (Youtube)](https://www.youtube.com/watch?v=Xv93fI9WE_Q) / [개선 내용을 담은 블로그 (Blog)](https://tlsgmltjd.tistory.com/6) / [트러블 슈팅 내용을 담은 블로그 (Blog)](https://tlsgmltjd.tistory.com/7)
+
+</p>
 
 ### 2025 9기 신입생 멘토링 발표 (교내)
 
 신입생들에게 본교에서 1학년 시기에 대한 조언과 개발자로서 성장할 수 있는 방법을,  
 약 80명의 리스너 앞에서 15분간 발표를 진행했습니다.  
-[발표 자료 링크](https://drive.google.com/file/d/1KDANsr3mcEMWYua7V5GiylQ_iQP9Uf6t/view?usp=sharing)
+[발표 자료 링크 (Google Drive)](https://drive.google.com/file/d/1KDANsr3mcEMWYua7V5GiylQ_iQP9Uf6t/view?usp=sharing)
 
 ---
 
 # Awards
 
 <p class="cer-box">
-### 제 21회, 22회 TOPCIT 성적 우수자 선정 - 금상
+### 제 21회, 22회 TOPCIT 성적 우수자 선정 - 금상(전국 2위)
 
 <p className="sub-text">
-  제 21회, 22회 TOCIT 고등학생 부문에서 금상(2위)을 수상받아 시상식에 초청 (2회
-  수상)
+  제 21회, 22회 <span className="bold">TOCIT 고등학생 부문에서 금상(2위)</span>을
+  수상받아 시상식에 초청 (2회 수상)
 </p>
 
 </p>
@@ -465,5 +577,5 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 </div>
 </div>
 
-더욱 자세한 모습은 면접에서 보여드리겠습니다.  
+더욱 자세한 모습은 인터뷰를 통해 제 경험을 소개해 드리고 싶습니다.  
 검토해 주셔서 감사합니다.
