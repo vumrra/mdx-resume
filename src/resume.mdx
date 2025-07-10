@@ -294,7 +294,7 @@ DTO 반환 시에는 컨트롤러가 객체를 그대로 반환하고, 단순 �
         fontWeight: "bold",
         color: "#007acc",
         textDecoration: "none",
-        marginBottom: "4px",
+        marginBottom: "2px",
       }}
     >
       GOGO - 프로젝트 깃허브
@@ -308,16 +308,18 @@ DTO 반환 시에는 컨트롤러가 객체를 그대로 반환하고, 단순 �
 
 <h2 style={{ marginTop: 0 }}> 개요 및 역할 </h2>
 
-  <div class="sub-content">
-    GOGO는 전국 중·고등학교 대상 스포츠 행사 플랫폼으로, 쉽고 즐겁게 경기 운영을 돕는 서비스입니다.   
-    본교 체육대회에서 +350명 DAU를 기록하며 서비스 중이고, 전국 단위 확장을 목표로 발전하고 있습니다.   
-    서버 개발과 팀 리더를 맡아 Restful API 개발, 성능 개선, 마이크로서비스 전환을 주도했습니다.   
-    전시 API의 응답 시간을 개선했으며, 비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.   
-    -> 커버링 인덱스를 적용해 랭킹 조회 API의 <span class="bold">응답 속도를 200% 단축</span> [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
+<div class="sub-content">
 
-  </div>
+GOGO는 전국 중·고등학교 대상 스포츠 행사 플랫폼으로, 쉽고 즐겁게 경기 운영을 돕는 서비스입니다.  
+ 본교 체육대회에서 +350명 DAU를 기록하며 서비스 중이고, 전국 단위 확장을 목표로 발전하고 있습니다.  
+ 서버 개발과 팀 리더를 맡아 Restful API 개발, 성능 개선, 마이크로서비스 전환을 주도했습니다.  
+ 전시 API의 응답 시간을 개선했으며, 비동기 큐(Kafka)를 활용하여 처리량을 개선했습니다.  
+ -> 커버링 인덱스를 적용해 랭킹 조회 API의 <span class="bold">응답 속도를 200% 단축</span> [(PR)](https://github.com/team-gogo/gogo-stage/pull/153)
+
+</div>
 
 <p class = "full-half-content">
+
 ## Skills
 
 - Java, Kotlin, Spring Boot, JPA, QueryDSL, Exposed, Spring Batch, Spring Cloud, Python, FastAPI
@@ -381,7 +383,6 @@ DTO 반환 시에는 컨트롤러가 객체를 그대로 반환하고, 단순 �
 </p>
 
 <br />
-<br />
 
 <p class="content">
 ## 매트릭, 로그 수집 및 모니터링
@@ -404,6 +405,65 @@ Prometheus와 Loki로 데이터를 수집하고, Grafana에서 통합 모니터�
 <img src="/gogo-ddd.png" alt="gogo-ddd-img" style={{ width: "100%" }} />
 
 </p>
+
+# Skills
+
+- 백엔드 엔지니어로서, 해결해야 하는 문제를 기술적으로 풀어낼 수 있도록 탐구합니다.
+- 문제를 해결하기 위해 새로운 기술을 빠르게 습득하고 활용할 수 있습니다.
+- 심도 깊은 코드리뷰와 피드백을 주고받으며 코드의 품질을 높이는 문화를 좋아합니다.
+- 직위와 포지션에 상관없이 자유롭게 의견을 나눌 수 있는 분위기를 선호합니다.
+
+## Java & Kotlin
+
+- jvm에 대한 기본적인 이해가 있습니다.
+  - 클래스로더, JIT 등의 동작 과정을 이해하며 성능 개선을 위해 low-level 관점에서도 접근할 수 있습니다.
+- java 8 이후에 도입된 기능들을 적극적으로 활용할 수 있습니다.
+- java reflection을 이해하고 spring frameworks를 사용합니다.
+  - DI, Proxy, 어노테이션 프로세싱의 내부 동작을 이해하고 이를 직접 구현하거나 활용한
+    경험이 있습니다.
+- java 프로젝트를 kotlin 100%로 마이그레이션한 경험이 있으며, null-safety 등의 기능을 활용할 수 있습니다.
+
+## springboot
+
+- DI, IoC, Bean 등의 스프링 기본 원리에 대해 이해하고 있습니다.
+- 스프링 트랜잭션에 대해 이해하고 있으며, 지원하는 기능을 활용할 수 있습니다.
+- 도메인 요구사항을 토대로 Restful API를 개발할 수 있습니다.
+
+## JPA
+
+- 엔티티와 영속성 컨텍스트에 대해 이해하고 있습니다.
+- JPA의 내부 동작 과정과 JDBC, 커넥션 풀 등 데이터베이스 접근 기술에 대해 이해하고 있습니다.
+- N+1 문제, OSIV, 2차 캐시, JPQL 등 JPA에서 발생할 수 있는 이슈와 최적화 방법을 숙지하고 있습니다.
+- QueryDSL로 type-safety한 쿼리를 작성하며, 페이징, Batch Size 조정 등으로 성능 개선 경험이 있습니다.
+
+## DB
+
+- RDMS 개념을 이해하며 주로 MySQL을 사용합니다.
+- 비즈니스 요구사항을 바탕으로 ERD 설계, 정규화 등으로 데이터 모델링을 할 수 있습니다.
+- MySQL의 인덱스 자료구조 개념, 트랜잭션 동작 과정의 이해가 있으며 성능 개선에 활용할 수 있습니다.
+
+## Redis
+
+- Redis의 기본 개념의 이해가 있습니다.
+- 다양한 자료구조를 상황에 맞게 사용할 수 있습니다.
+- LFU, LRU 메모리 관리 정책과, maxmemory 설정 등으로 최적화 경험이 있습니다.
+- 고가용성 구조를 위한 복제, 센티널, 클러스터 구조에 대한 기본적인 이해가 있습니다.
+
+## DevOps
+
+- 시스템 자동화에 관심이 많으며, 배포 파이프라인에 대한 기본적인 이해가 있습니다.
+- Docker 컨테이너에 대해 이해하고 활용할 수 있습니다.
+- github actions 기반 CI/CD를 구현할 수 있습니다.
+- AWS의 기능을 이해하고 활용할 수 있으며, Cloud Watch로 application 모니터링을 구축한 경험이 있습니다.
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 # Experience
 
@@ -499,8 +559,8 @@ GSM GOGO V2 프로젝트를 기획, 개발, 운영을 하며 얻은 경험을,
 ### 제 21회, 22회 TOPCIT 성적 우수자 선정 - 금상(전국 2위)
 
 <p className="sub-text">
-  제 21회, 22회 <span className="bold">TOCIT 고등학생 부문에서 금상(2위)</span>을
-  수상받아 시상식에 초청 (2회 수상)
+  제 21회, 22회 <span className="bold">TOCIT 고등학생 부문에서 금상(2위)</span>
+  을 수상받아 시상식에 초청 (2회 수상)
 </p>
 
 </p>
