@@ -56,16 +56,13 @@ h3 {
   border: 2px solid black;
 }
 
-a {
-  color: rgb(59 130 246);
-  text-decoration: inherit;
+.color-blue {
+  color: rgb(72, 128, 220);
 }
 
-.header {
-  width: 150vh;
-  position: fixed;
-  left: 0;
-  top: 0;
+a {
+  /* color: rgb(59 130 246); */
+  color: rgb(52, 52, 52);
 }
 
 .medium-img {
