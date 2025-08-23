@@ -8,8 +8,8 @@ body {
   margin: 0 auto;
   line-height: 2;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 h2 {
